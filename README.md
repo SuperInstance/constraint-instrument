@@ -99,3 +99,11 @@ src/constraint_instrument/
 ## License
 
 MIT
+
+## Related Repos
+
+- **[plato-room-musician](https://github.com/SuperInstance/plato-room-musician)** — Sonify PLATO fleet activity via MIDI
+- **[flux-tensor-midi](https://github.com/SuperInstance/flux-tensor-midi)** — INT8-saturated MIDI for neural synthesis
+- **[tensor-spline](https://github.com/SuperInstance/tensor-spline)** — Compressed neural network layers (Eisenstein lattice splines)
+- **[penrose-memory](https://github.com/SuperInstance/penrose-memory)** — Aperiodic memory palace (another aperiodic-math-meets-AI project)
+- **[holonomy-harmony](https://github.com/SuperInstance/holonomy-harmony)** — Chord progression analysis via holonomy

@@ -173,6 +173,22 @@ class GoodmanEngine:
                 if pc in self.degree_weights:
                     self.degree_weights[pc] = 0.2
 
+    def prescribe(self, missing_order: int, **kwargs) -> Prescription:
+        """Generate exercises for a missing order."""
+        focus = kwargs.get("focus", ORDER_NAMES.get(missing_order, "POSITION").lower())
+        exercises = [
+            f"Practice {focus} patterns in multiple keys",
+            f"Record yourself and analyze {focus} tendencies",
+            f"Transpose a melody focusing on {focus}",
+        ]
+        return Prescription(
+            order=missing_order,
+            order_name=ORDER_NAMES.get(missing_order, "UNKNOWN"),
+            focus=focus,
+            exercises=exercises,
+            rationale=f"Targeted exercises for {ORDER_NAMES.get(missing_order, 'unknown')} improvement",
+        )
+
     def diagnose(self, notes: List[Note]) -> DiagnosticReport:
         """
         Analyze a performance and return a full DiagnosticReport.
@@ -768,7 +784,10 @@ class GoodmanEngine:
     def _prescribe(self, order: OrderScore) -> Prescription:
         """Generate specific exercises for a weak order."""
         # Pick exercises based on which sub-component is weakest
-        weakest_component = min(order.components, key=order.components.get)
+        if not order.components:
+            weakest_component = "default"
+        else:
+            weakest_component = min(order.components, key=order.components.get)
 
         exercise_map = {
             0: {
@@ -854,14 +873,15 @@ class GoodmanEngine:
         order_exercises = exercise_map.get(order.order, {})
         exercises = order_exercises.get(weakest_component, order_exercises.get("default", []))
 
+        comp_pct = order.components.get(weakest_component, 0) if order.components else 0
         rationale = {
-            0: f"Your weakest area is '{weakest_component}' ({order.components[weakest_component]:.0%}). "
+            0: f"Your weakest area is '{weakest_component}' ({comp_pct:.0%}). "
                "These exercises will build automatic pitch selection.",
-            1: f"Your weakest area is '{weakest_component}' ({order.components[weakest_component]:.0%}). "
+            1: f"Your weakest area is '{weakest_component}' ({comp_pct:.0%}). "
                "These exercises will build directional awareness in your lines.",
-            2: f"Your weakest area is '{weakest_component}' ({order.components[weakest_component]:.0%}). "
+            2: f"Your weakest area is '{weakest_component}' ({comp_pct:.0%}). "
                "These exercises will develop your time feel and dynamic control.",
-            3: f"Your weakest area is '{weakest_component}' ({order.components[weakest_component]:.0%}). "
+            3: f"Your weakest area is '{weakest_component}' ({comp_pct:.0%}). "
                "These exercises will build your structural and architectural awareness.",
         }.get(order.order, "Practice these exercises to improve.")
 

@@ -181,10 +181,11 @@ class TestGoodmanMode(unittest.TestCase):
             {"pitch": 60, "velocity": 85, "start": 3.5, "duration": 1.0},
         ]
         report = self.inst.diagnose(notes)
-        self.assertIn("POSITION", report.stars)
-        self.assertIn("DIRECTION", report.stars)
-        self.assertIn("CURVATURE", report.stars)
-        self.assertIn("STRUCTURE", report.stars)
+        order_names = {o.name for o in report.orders}
+        self.assertIn("POSITION", order_names)
+        self.assertIn("DIRECTION", order_names)
+        self.assertIn("CURVATURE", order_names)
+        self.assertIn("STRUCTURE", order_names)
         self.assertIsNotNone(report.recommendation)
 
     def test_prescribe(self):

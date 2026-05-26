@@ -27,7 +27,7 @@ from constraint_instrument.monitor import Monitor
 results = []
 
 
-def test(name, func):
+def run_test(name, func):
     """Run a test and track results."""
     try:
         func()
@@ -282,21 +282,21 @@ if __name__ == "__main__":
     random.seed(42)
     print("\n🔬 Constraint Instrument — Integration Tests\n")
 
-    test("All 17 terrains load", test_all_terrains_load)
-    test("Parker mode", test_parker_mode)
-    test("Miles mode", test_miles_mode)
-    test("Ellington mode", test_ellington_mode)
-    test("Basie mode", test_basie_mode)
-    test("Goodman mode", test_goodman_mode)
-    test("Armstrong mode", test_armstrong_mode)
-    test("Ella mode", test_ella_mode)
-    test("Goodman external diagnosis", test_goodman_diagnose_external)
-    test("Monitor wrapping", test_monitor_wrapping)
-    test("WAV render (Parker)", test_render_wav_parker)
-    test("WAV render (Ella)", test_render_wav_ella)
-    test("All terrains through modes", test_all_terrains_through_modes)
-    test("All modes produce valid notes", test_all_modes_produce_valid_notes)
-    test("Demo WAV output", test_demo_output_wav)
+    run_test("All 17 terrains load", test_all_terrains_load)
+    run_test("Parker mode", test_parker_mode)
+    run_test("Miles mode", test_miles_mode)
+    run_test("Ellington mode", test_ellington_mode)
+    run_test("Basie mode", test_basie_mode)
+    run_test("Goodman mode", test_goodman_mode)
+    run_test("Armstrong mode", test_armstrong_mode)
+    run_test("Ella mode", test_ella_mode)
+    run_test("Goodman external diagnosis", test_goodman_diagnose_external)
+    run_test("Monitor wrapping", test_monitor_wrapping)
+    run_test("WAV render (Parker)", test_render_wav_parker)
+    run_test("WAV render (Ella)", test_render_wav_ella)
+    run_test("All terrains through modes", test_all_terrains_through_modes)
+    run_test("All modes produce valid notes", test_all_modes_produce_valid_notes)
+    run_test("Demo WAV output", test_demo_output_wav)
 
     # Summary table
     passed = sum(1 for _, status, _ in results if status == "PASS")

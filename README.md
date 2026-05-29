@@ -128,3 +128,5 @@ MIT
 - **[tensor-spline](https://github.com/SuperInstance/tensor-spline)** — Compressed neural network layers (Eisenstein lattice splines)
 - **[penrose-memory](https://github.com/SuperInstance/penrose-memory)** — Aperiodic memory palace (another aperiodic-math-meets-AI project)
 - **[holonomy-harmony](https://github.com/SuperInstance/holonomy-harmony)** — Chord progression analysis via holonomy
+
+Part of the [SuperInstance OpenConstruct](https://github.com/SuperInstance/OpenConstruct) ecosystem.

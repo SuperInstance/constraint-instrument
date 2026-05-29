@@ -93,8 +93,29 @@ src/constraint_instrument/
 ├── armstrong.py         # Liberation mode
 ├── ella.py              # Flow mode
 ├── monitor.py           # Real-time constraint monitoring
+├── genre_brain.py       # Genre-aware constraint generation
+├── chords.py            # Chord voicing constraint system
+├── texture.py           # Textural constraint analysis
+├── liner_notes.py       # Programmatic liner notes generation
+├── exercises.py         # Constraint-based practice exercises
+├── nomenclature.py      # Musical nomenclature reference
+├── terrain_morph.py     # Smooth terrain morphing between landscapes
+├── seed_manager.py      # Deterministic seed management for reproducibility
+├── analyzer.py          # Constraint surface analysis tools
+├── tracks.py            # Multi-track constraint composition
 └── examples/            # Usage examples
 ```
+
+## Documentation
+
+- [`docs/INVISIBLE-ENGINEER.md`](docs/INVISIBLE-ENGINEER.md) — *The Invisible Engineer*: essay on monitor engineering as metaphor for constraint-based tools
+- [`docs/NOMENCLATURE.md`](docs/NOMENCLATURE.md) — Musical nomenclature reference
+- [`docs/USER-REPORTS/`](docs/USER-REPORTS/) — User feedback from jazz saxophonists, electronic producers, hip-hop producers, and math educators
+- [`site/`](site/) — Web playground and audio demos
+
+## Connection to Conservation Spectral Analysis
+
+The Constraint Instrument embodies a core principle of the conservation spectral ecosystem: that creative constraints are not limitations but *spectral signatures* — unique fingerprints of a musical tradition's relationship to harmonic, rhythmic, and textural space. Each terrain map is a conservation law in miniature, defining what quantities remain invariant (tonal center, groove skeleton, register balance) while allowing everything else to vary. The monitor and house modes parallel spectral analysis techniques: reading the system state, detecting deviations from the constraint surface, and providing corrective feedback that preserves the conserved quantities.
 
 ## License
 
